@@ -1,9 +1,15 @@
+// ANGULAR & DEPENDENCIES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
+
+// COMPONENTS
+import { AppComponent } from './app.component';
+
+// MODULES
+import { AppRoutingModule } from './app-routing.module';
+
+// REDUCERS
 import { reducers, metaReducers } from './reducers';
 
 @NgModule({
