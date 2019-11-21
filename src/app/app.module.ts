@@ -5,19 +5,18 @@ import { StoreModule } from '@ngrx/store';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
 // REDUCERS
 import { reducers, metaReducers } from './reducers';
-import { AuthComponent } from './auth/auth.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     WelcomeComponent
   ],
   imports: [
@@ -29,7 +28,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
         strictStateImmutability: true,
         strictActionImmutability: true
       }
-    })
+    }),
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
