@@ -11,10 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 // REDUCERS
 import { reducers, metaReducers } from './reducers';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
