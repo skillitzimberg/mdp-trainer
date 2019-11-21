@@ -12,11 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 // REDUCERS
 import { reducers, metaReducers } from './reducers';
 import { AuthComponent } from './auth/auth.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
