@@ -8,7 +8,7 @@ import { MaterialModule } from '../material.module';
     MaterialModule,
   ],
   exports: [
-    MaterialModule,    
+    MaterialModule,
   ]
 })
 export class SharedModule {}
