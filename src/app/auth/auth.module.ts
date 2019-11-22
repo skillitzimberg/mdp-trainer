@@ -1,12 +1,23 @@
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+import { AuthRoutingModule } from './auth-routing.module';
+import { MaterialModule } from '../material.module';
+import { SharedModule } from '../shared/shared.module';
 
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent, 
+    RegisterComponent
+  ],
   imports: [
-    CommonModule
+    AngularFireAuthModule,
+    AuthRoutingModule,
+    MaterialModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

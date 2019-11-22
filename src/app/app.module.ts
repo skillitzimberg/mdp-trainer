@@ -1,7 +1,6 @@
 // ANGULAR & DEPENDENCIES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -12,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 
 // REDUCERS
-import { reducers, metaReducers } from './reducers';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,15 +19,9 @@ import { reducers, metaReducers } from './reducers';
     WelcomeComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    }),
+    BrowserModule,
+    SharedModule,
     AuthModule
   ],
   providers: [],
