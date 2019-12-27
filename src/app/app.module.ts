@@ -1,7 +1,9 @@
 // ANGULAR & DEPENDENCIES
 import { AngularFireModule } from '@angular/fire';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -10,11 +12,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-
-// REDUCERS
 import { SharedModule } from './shared/shared.module';
 
-// OTHER
+// REDUCERS
+import * as fromAuth from './auth/auth.reducer';
+
+// SERVICES
+import { AuthService } from './auth/auth.service'
+
+// ENVIRONMENT
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -25,11 +31,15 @@ import { environment } from '../environments/environment';
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
+    AuthModule,
+    BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
-    AuthModule
+    StoreModule.forRoot({auth: fromAuth.reducer}),
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

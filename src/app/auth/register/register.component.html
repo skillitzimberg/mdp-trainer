@@ -1,7 +1,33 @@
 <section>
-  <form>
+  <form
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+  >
     <mat-form-field>
-      <input matInput type="email" placeholder="Input">
+      <input 
+        matInput 
+        name="email" 
+        type="email" 
+        placeholder="email" 
+        [(ngModel)]='email'>
     </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        name="password" 
+        type="password" 
+        placeholder="password" 
+        [(ngModel)]='password'>
+    </mat-form-field>
+    
+    <button
+      mat-raised-button
+      type="submit" 
+      color="primary"
+    >Register</button>
   </form>
+
+  <p>{{email}}</p>
+  <p>{{password}}</p>
 </section>
