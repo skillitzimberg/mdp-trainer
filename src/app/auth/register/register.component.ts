@@ -19,7 +19,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(`register.onSubmit: ${form.value.email}: ${form.value.password}`);
+    this.authService.registerUser({
+      email: form.value.email, 
+      password: form.value.password
+    });
   }
 
 }

@@ -6,7 +6,7 @@ export const register = createAction(
 
 export const login = createAction(
   '[Log In] Log in',
-  props<{ username: string, password: string }>()
+  props<{ email: string, password: string }>()
 );
 
 export const logout = createAction(

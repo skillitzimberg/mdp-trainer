@@ -19,4 +19,3 @@ const _authReducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return _authReducer(state, action);
 }
-
