@@ -1,33 +1,45 @@
 // ANGULAR & DEPENDENCIES
+import { AngularFireModule } from '@angular/fire';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 // MODULES
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 // REDUCERS
-import { reducers, metaReducers } from './reducers';
+import * as fromAuth from './auth/auth.reducer';
+
+// SERVICES
+import { AuthService } from './auth/auth.service'
+
+// ENVIRONMENT
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent
   ],
   imports: [
-    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })
+    AuthModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    SharedModule,
+    StoreModule.forRoot({auth: fromAuth.reducer}),
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

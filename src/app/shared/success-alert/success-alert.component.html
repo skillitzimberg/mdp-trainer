@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]='alertMessage'>
+<button class="btn btn-primary" (click)="onToggleAlertClass()" [disabled]="isDisabled()">Toggle Alert Class</button>
+<div id='alert' [class]='alertClass'>
+  {{ alertMessage }}
+</div>
+
+<button (click)="toggleDisplayed()">Display Details</button>
+<p *ngIf="isDisplayed">Keep it secret. Keep it safe.</p>
+<p 
+  *ngFor="let log of clickLog; let i = index" 
+  [ngStyle]="{ 'backgroundColor': i >= 4 ? blue : '#fff' }" 
+  [ngClass]="{ 'success': i >= 4 }">
+   {{ log }}
+</p>

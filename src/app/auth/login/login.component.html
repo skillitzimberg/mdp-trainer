@@ -1,0 +1,24 @@
+<section>
+  <form
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+  >
+      <input 
+        name="email" 
+        type="email" 
+        placeholder="email" 
+        [(ngModel)]='email'>
+
+      <input 
+        name="password" 
+        type="password" 
+        placeholder="password" 
+        [(ngModel)]='password'>
+    
+    <button
+      type="submit" 
+    >Log In</button>
+  </form>
+  <button 
+  (click)="logout()">Log Out</button>
+</section>
