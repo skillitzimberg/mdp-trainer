@@ -1,0 +1,32 @@
+mat-toolbar {
+  height: 30%;
+}
+#header-menu {
+  list-style: none;
+  margin: 20px 0;
+}
+
+#logo {
+  margin: 0 25px;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 500px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin: 5px;
+}
+
+#dragon {
+  margin: auto;
+}
