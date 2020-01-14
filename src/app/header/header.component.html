@@ -1,0 +1,18 @@
+<mat-toolbar color="accent">
+  <div fxShow fxHide.gt-sm>
+    <mat-icon (click)="onToggleSidenav()">menu</mat-icon>
+  </div>
+  <div id="logo">North Portland Martial Arts & Movement</div>
+
+  <div fxFlex fxLayout fxLayoutAlign="center" id="dragon">
+    <img src="assets/img/transparent_dragon.png" alt="">
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide fxShow.gt-sm>
+    <ul id="header-menu" fxLayout fxLayoutGap="15px">
+      <li><a routerLink="/">home</a></li>
+      <li><a routerLink="/login">login</a></li>
+      <li><a routerLink="/register">register</a></li>
+    </ul>
+  </div>
+</mat-toolbar>
